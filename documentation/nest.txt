@@ -1,0 +1,14 @@
+$ npm i -g @nestjs/cli
+$ nest new chat-angular
+
+$ cd chat-angular
+
+$ npm run start
+$ nest start
+
+npm i --save @nestjs/axios
+
+nest generate module share-module
+
+nest generate controller share-module/tests
+nest generate service share-module/tests

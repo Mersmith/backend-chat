@@ -1,0 +1,44 @@
+POST: https://graph.facebook.com/v17.0/111079285343903/messages
+
+Authorization
+Bearer Token
+Token: EAAJSbkex1kkBAKmeuDEg7GRv8ORz9dPt7AovcjyCZA9FZBQylLq3YGEMDrMZAbLbtdphIcdoCsUaEyIKmYqlLxUomw3rHKeMiwDfK0QEnrpx7baSQBZBjWiKkqxJU9qzjJ24Jt3d5LyORGP9HsUSKE0vgS6wpcd9MkuZBeHrpbzr9ZAqSDm5K2G6hcD8y2EnxNrbbst8DIeMU4Oil3B6sOHz1NeKIGPegZD
+
+Headers
+Content-Type application/json
+
+**************************************************************************************
+
+Body enviar
+raw
+{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "51960335525",
+    "type": "text",
+    "text": {
+        "preview_url": false,
+        "body": "Saludos desde POSTMAN."
+    }
+}
+
+{
+    "messaging_product": "whatsapp",
+    "to": "51960335525",
+    "type": "template",
+    "template": {
+        "name": "hello_world",
+        "language": {
+            "code": "en_US"
+        }
+    }
+}
+
+**************************************************************************************
+
+Response ok
+
+
+**************************************************************************************
+
+Response error

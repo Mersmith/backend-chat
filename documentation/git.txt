@@ -1,0 +1,16 @@
+git config --list
+
+git config --global --unset user.name
+git config --global --unset user.email
+
+rd /s /q .git
+
+git config --global user.name "Mersmith"
+git config --global user.email "mersmith14@gmail.com"
+
+git init
+git add .
+git commit -m "1 - Inicio"
+git log
+git remote add origin https://github.com/Mersmith/backend-chat.git
+git push origin master

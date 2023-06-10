@@ -1,0 +1,21 @@
+--> Crear los archivos.
+Dockerfile
+.dockerignore
+
+--> Ejecutar los comandos.
+docker build -t chat-angular .
+docker run -p 4000:3000 chat-angular
+
+--> Detener y eliminar el puerto usado en este caso 3000.
+docker stop <container-id>
+docker rm <container-id>
+
+--> Abrir el puerto
+http://localhost:4000
+
+--> Ver los servicios abiertos.
+docker ps
+
+--> Detener el servicio.
+docker stop <ID o nombre del contenedor>
+docker stop d2d5df9c47e1
