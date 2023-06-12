@@ -21,3 +21,10 @@ git status
 git add .
 git commit -m "Probar api whatsapp"
 git push origin 1_Whatsapp
+
+git checkout -b 2_Vercel
+git branch
+git status
+git add .
+git commit -m "Probar en vercel"
+git push origin 2_Vercel
