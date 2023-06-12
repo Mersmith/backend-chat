@@ -1,0 +1,56 @@
+var express = require("express"),
+  bodyParser = require("body-parser");
+
+var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const token=process.env.WHATSAPP_TOKEN;
+const mytoken=process.env.WHATSAPP_TOKEN_VERIFICACION;//prasath_token
+
+app.get("/", function (request, response) {
+  response.send("HOLA :)" + "]" + mytoken);
+});
+
+app.get("/webhook", function (request, response) {
+  if (
+    request.query["hub.mode"] == "subscribe" &&
+    request.query["hub.verify_token"] == mytoken
+  ) {
+    response.send(request.query["hub.challenge"]);
+  } else {
+    response.sendStatus(400);
+  }
+});
+
+app.post("/webhook", function (request, response) {
+  const body = request.body;
+  //console.log(JSON.stringify(body, null, 2));
+
+  if (
+    body.object &&
+    body.entry &&
+    body.entry[0].changes &&
+    body.entry[0].changes[0].value.messages &&
+    body.entry[0].changes[0].value.messages[0]
+  ) {
+    const phoneNumberId =
+      body.entry[0].changes[0].value.metadata.phone_number_id;
+    const from = body.entry[0].changes[0].value.messages[0].from;
+    const messageBody = body.entry[0].changes[0].value.messages[0].text.body;
+
+    console.log("Phone number: " + phoneNumberId);
+    console.log("From: " + from);
+    console.log("Message: " + messageBody);
+
+    return response.sendStatus(200);
+  } else {
+    return response.sendStatus(404);
+  }
+});
+
+var listener = app.listen(process.env.PORT, function () {
+  console.log("Escuchando en el puerto " + listener.address().port);
+  console.log(mytoken);
+});
