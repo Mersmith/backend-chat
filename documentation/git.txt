@@ -14,3 +14,10 @@ git commit -m "1 - Inicio"
 git log
 git remote add origin https://github.com/Mersmith/backend-chat.git
 git push origin master
+
+git checkout -b 1_Whatsapp
+git branch
+git status
+git add .
+git commit -m "Probar api whatsapp"
+git push origin 1_Whatsapp
