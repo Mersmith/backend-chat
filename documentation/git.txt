@@ -35,3 +35,10 @@ git status
 git add .
 git commit -m "Probar en vercel 2"
 git push origin 3_Vercel
+
+git checkout -b 4_Glitch
+git branch
+git status
+git add .
+git commit -m "Probar en Glitch"
+git push origin 4_Glitch
