@@ -28,3 +28,10 @@ git status
 git add .
 git commit -m "Probar en vercel"
 git push origin 2_Vercel
+
+git checkout -b 3_Vercel
+git branch
+git status
+git add .
+git commit -m "Probar en vercel 2"
+git push origin 3_Vercel
